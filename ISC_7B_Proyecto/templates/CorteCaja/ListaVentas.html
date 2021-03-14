@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <title>Lista de Ventas</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/EstilosF.css')}}" >
+</head>
+<header class="principalVenta">
+    <h1>Ventas: Corte de Caja</h1>
+    <div class="ventaLineaV">
+        <a href="/mandarInicio" class="Iniciar">
+            <h2>INICIO</h2>
+        </a>
+    </div>
+    </header>
+
+<body class="menuCorteCaja">
+    <main>
+        <table>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <img src="{{url_for('static', filename='../static/IMAGENES/Ventas.png')}}" width="30px">Ventas
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/venta">Crear Venta</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Inventario.png')}}" width="30px">Productos
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Productos">Listar productos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/CorCaja.png')}}" width="30px">Corte de
+                        Caja
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/corteCaja">Lista de Ventas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Consultar.png')}}" width="5px">Usuarios
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/listaUsuarios">Usuarios Registrados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </table>
+        <br>
+        <br>
+        <fieldset class="inventario">
+
+   <!--form action="/listarCorte" method="post">
+       <button name="corte" type="submit" class="btn btn-info" role="button" style="margin-left: 47%;">Ver Registros</button>
+   </form-->
+<br>
+            <table class="table table-borderedo">
+                <thead>
+                <tr>
+                <th>idVenta</th>
+                <th>Nombre Producto</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Eliminar</th>
+                </tr>
+                </thead>
+                  <tbody>
+                    {% for corte in cortes %}
+                    <tr>
+                        <td>{{corte.0}}</td>
+                        <td>{{corte.1}}</td>
+                        <td>{{corte.2}}</td>
+                        <td>{{corte.3}}</td>
+                        <td> <a href="/eliminarCorte/{{corte.0}}"><img
+                                        src="{{url_for('static',filename='../static/imagenes/eliminar.png')}}"></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+          
+        </fieldset>
+        </center>
+
+    </main>
+
+</body>
+
+</html>

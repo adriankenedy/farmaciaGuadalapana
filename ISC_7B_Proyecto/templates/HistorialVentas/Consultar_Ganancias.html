@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <title>Consultar Ganancias</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/EstilosF.css')}}">
+</head>
+
+<header class="principalVenta">
+    <h1>CONSULTAR GANANCIAS</h1>
+    <div class="ventaLineaV">
+        <a href="/mandarInicio" class="Iniciar">
+            <h2>INICIO</h2>
+        </a>
+    </div>
+</header>
+
+
+
+<body class="menuGanancias">
+    <main>
+        <table>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <img src="{{url_for('static', filename='../static/IMAGENES/Ventas.png')}}" width="30px">Ventas
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/venta">Crear Venta</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Inventario.png')}}" width="30px">Productos
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Productos">Listar productos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/CorCaja.png')}}" width="30px">Corte de
+                        Caja
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/corteCaja">Lista de Ventas</a></li>
+                        <!-- <li><a href="#">Actualizar Registros</a></li-->
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Consultar.png')}}" width="5px">Historial
+                        de
+                        Ventas
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/historialVentas">Lista de todas las Ventas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </table>
+
+        <fieldset>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> Dia </th>
+                        <th> Nombre del Producto </th>
+                        <th> Total</th>
+                    </tr>
+                </thead>
+            </table>
+        </fieldset>
+      
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <title>Crear Venta</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/EstilosF.css')}}">
+    <script src="{{url_for('static',filename='js/opciones.js')}}"></script>
+</head>
+
+<body class="menuVenta" onload="inicializarDivs()">
+
+    <div id="listadoGeneral">
+        <header class="principalVenta">
+    <h1>CREAR NUEVO REGISTRO</h1>
+    <div class="ventaLineaV">
+        <a href="/mandarInicio" class="Iniciar">
+            <h2>INICIO</h2>
+        </a>
+    </div>
+</header>
+
+
+        <style>
+            #ventasB {
+                margin-right: 720px;
+
+            }
+
+            #codigo {
+                margin-left: 150px;
+                margin-top: -55px;
+            }
+
+            #ventass th {
+                border: 2px double black;
+
+            }
+
+            #ventass td {
+                border: 2px double black;
+            }
+
+            #venta th{
+            border: 2px double black;
+            }
+
+        </style>
+
+        <div class="cols-sm-4">
+            <table>
+                <div class="conteiner_Venta">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            <img src="{{url_for('static', filename='../static/IMAGENES/Ventas.png')}}"
+                                width="30px">Ventas
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/venta">Crear Venta</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="conteiner_Venta">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                                src="{{url_for('static', filename='../static/IMAGENES/Inventario.png')}}"
+                                width="30px">Productos
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Productos">Listar productos</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="conteiner_Venta">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                                src="{{url_for('static', filename='../static/IMAGENES/CorCaja.png')}}"
+                                width="30px">Corte de
+                            Caja
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/corteCaja">Lista de Ventas</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="conteiner_Venta">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                                src="{{url_for('static', filename='../static/IMAGENES/Consultar.png')}}"
+                                width="5px">Usuarios
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/listaUsuarios">Usuarios Registrados</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </table>
+        </div>
+
+        <div id="registro">
+            <fieldset class="crear_venta">
+                <h2> Venta </h2>
+
+                <tr>
+                    <td>
+                        <label>Codigo de Producto:</label>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        <form action="/seleccionVenta" method="post">
+                            <button id="ventasB" type="submit" class="btn btn-primary" role="button">Buscar </button>
+                            <input id="codigo" type="number" placeholder="Escribe el codigo" required
+                                name="codigoBarras">
+                        </form>
+                    </td>
+                    <br>
+                </tr>
+
+
+                <div class="tventas">
+                    <table id="ventass" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> C&oacutedigo </th>
+                                <th> Nombre del Producto</th>
+                                <th> Precio Venta </th>
+                                <th> Precio Compra </th>
+                                <th> Carrito</th>
+                                {%for venta in ventas%}
+                            <tr>
+                                <td>{{venta.0}}</td>
+                                <td>{{venta.1}}</td>
+                                <td>{{venta.2}}</td>
+                                <td>{{venta.3}}</td>
+                                <td>{{venta.4}}</td>
+                                <td>
+                                    <a href="/añadirVenta/{{venta.0}}" type="submit" class="btn btn-success" role="button"
+                                       style="margin-left: 50px;">Añadir al Carrito</a>
+                                </td>
+                            </tr>
+                            {%endfor%}
+                            </tr>
+                        </thead>
+                    </table>
+                    <a href="javascript:carrito()" class="btn btn-info" role="button">Ir a carrito</a>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div id="listadoIndividual">
+        <header class="principalVenta">
+            <h1>Carrito de Ventas</h1>
+        </header>
+<br>
+                     <a href="/listarCarrito" ><font color="red" style="margin-left: 80%">Listar Productos</font>
+                 </a>
+<br>
+            <table id="venta" class="table table-borderedo" >
+                <br>
+                <thead>
+                    <tr>
+                        <th>ID Producto</th>
+                        <th>Nombre de Producto</th>
+                        <th>Fecha</th>
+                        <th>Precio</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for carrito in carro %}
+                    <tr>
+                        <td>{{carrito.0}}</td>
+                        <td>{{carrito.1}}</td>
+                        <td>{{carrito.2}}</td>
+                        <td>{{carrito.3}}</td>
+                        <td> <a href="/eliminarCarro/{{carrito.0}}"><img
+                                        src="{{url_for('static',filename='../static/imagenes/eliminar.png')}}"></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <br>
+                        <form action="/guardarCarro" method="post">
+                            <button name="carro" type="submit" class="btn btn-success" role="button" style="margin-left: 47%;">Terminar Venta</button>
+                        </form>
+    </div>
+</body>
+</html>

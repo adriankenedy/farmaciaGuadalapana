@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <title>Productos</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/EstilosF.css')}}">
+</head>
+
+<header class="principalVenta">
+    <h1>LISTA</h1>
+    <div class="ventaLineaV">
+        <a href="/mandarInicio" class="Iniciar">
+            <h2>INICIO</h2>
+        </a>
+    </div>
+
+</header>
+
+
+<body class="menuInventario">
+    <script src="{{url_for('static', filename='js/opciones.js')}}"></script>
+
+    <style>
+        a.editarP {
+            margin-left: 0px;
+        }
+
+        a.eliminarP {
+
+            margin-left: 0px;
+        }
+
+        #listadoIndividual td {
+            text-decoration: none;
+        }
+
+        #tableP th {
+            border: 2px double black;
+        }
+
+        #tableP td {
+            border: 2px double black;
+        }
+    </style>
+    <main>
+        <table>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <img src="{{url_for('static', filename='../static/IMAGENES/Ventas.png')}}" width="30px">Ventas
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/venta">Crear Venta</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Inventario.png')}}"
+                            width="30px">Productos
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Productos">Lista de Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/CorCaja.png')}}" width="30px">Corte de
+                        Caja
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="corteCaja">Lista de Ventas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="conteiner_Venta">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img
+                            src="{{url_for('static', filename='../static/IMAGENES/Consultar.png')}}"
+                            width="5px">Usuarios
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/listaUsuarios">Usuarios Registrados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </table>
+        <br>
+        <br>
+        <br>
+        <fieldset class="productos">
+            <div class="container">
+                <!--a class="lista" href="/listarProductos" role="button" class="btn btn-primary">
+                    <font color="red">Listar Productos</font>
+                </a-->
+                <h2>Productos</h2>
+                <br>
+                <a href="/nuevoProducto" class="btn btn-info" role="button">Nuevo+</a>
+            </div>
+            <div class="tproductos">
+                <table id="tableP" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>C&oacutedigo</th>
+                            <th>Descripci&oacuten</th>
+                            <th>Precio Compra</th>
+                            <th>Precio Venta</th>
+                            <th>Existencias</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in productos %}
+                        <tr>
+                            <td>{{product.0}}</td>
+                            <td>{{product.1}}</td>
+                            <td>{{product.2}}</td>
+                            <td>{{product.3}}</td>
+                            <td>{{product.4}}</td>
+                            <td>{{product.5}}</td>
+                            <td>
+                                <a class="editarP" href="/editarProducto/{{product.0}}"><img
+                                        src="{{url_for('static',filename='../static/imagenes/editar.png')}}"></a>
+                            </td>
+                            <td>
+                                <a class="eliminarP" href="/eliminarProducto/{{product.0}}"><img
+                                        src="{{url_for('static',filename='../static/imagenes/eliminar.png')}}"></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </main>
+</body>
+
+</html>

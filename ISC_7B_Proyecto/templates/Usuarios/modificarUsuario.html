@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename='../static/IMAGENES/logo.ico')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, scale = 1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<header>
+    <div class="jumbotron text-center" style="background-color: rgb(36, 143, 93)"></div>
+
+</header>
+
+<body>
+    <style>
+        input {
+            width: 700px;
+            height: 50px;
+            margin-left: 50px;
+        }
+
+        h2 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            size: 50px;
+            margin-left: 80px;
+            margin-top: 30px;
+        }
+
+        label {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            size: 20px;
+            margin-left: 80px;
+        }
+
+        .botonUser input {
+            background-color: grey;
+            border-radius: 10px 10px 10px 10px;
+            padding: 10px;
+            margin-inline-end: 45%;
+
+        }
+    </style>
+    </div>
+    <main>
+
+        <section>
+            <div>
+                <fieldset>
+                    <form action="/modificarUsuario" method="post" onsubmit="return validar(this)">
+                        <h2> Editar Usuario. </h2>
+                        <table>
+
+                            <tr>
+                                <th>
+                                    <label>Id Usuario: </label>
+                                </th>
+                                <td>
+                                   <input type="number" required name="id" id="id" value="{{user['id']}}" readonly/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label> Nombre Usuario: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder="Escribe nombre de usuario" required name="NombreUsuario" id="NombreUsuario" value="{{user['NombreUsuario']}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label> Contraseña: </label>
+                                </th>
+                                <td>
+                                    <input type="password" placeholder=" " required name="Contraseña" id="Contraseña" value="{{user['Passwd']}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label>Nombre Completo: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder="Nombre Completo" required name="NombreCompleto" id="NombreCompleto" value="{{user['NombreCompleto']}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label>Estatus: </label>
+                                </th>
+                                <td>
+                                    <input type="number" placeholder=" " required name="Estatus" id="Estatus" value="{{user['Estatus']}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label>Tipo: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder=" " required name="Tipo" id="Tipo" value="{{user['Tipo']}}">
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+
+                        <center class="botonUser"><input type="submit" value="Guardar"></center>
+                        <br>
+                        <h2><a href="/mandarInicio" class="linkButton">Cancelar</a></h2>
+
+                    </form>
+                </fieldset>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

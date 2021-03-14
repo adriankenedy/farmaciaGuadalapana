@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, scale = 1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<body class="fondo">
+    <div class="jumbotron text-center" style="background-color: rgb(50, 179, 78)">
+    </div>
+    <style>
+
+        .fondo{
+            background-color: rgb(233, 232, 171);
+        }
+        label {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            size: 20px;
+            margin-left: 80px;
+        }
+
+        input {
+            margin-left: 80px;
+            width: 300px;
+            height: 40px;
+
+        }
+
+        h2 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            size: 50px;
+            margin-left: 80px;
+            margin-top: 10px;
+        }
+
+        a {
+            margin-left: 80px;
+        }
+
+        .botonUser input {
+                background-color: grey;
+                border-radius: 10px 10px 10px 10px;
+                padding: 10px;
+                margin-inline-end: 45%;
+
+            }
+
+         footer{
+
+         background-color: rgb(233, 232, 171);
+         }
+    </style>
+    <main>
+        <section>
+            <div>
+
+                <fieldset>
+                    <form action="/actualizarProducto/{{producto.0}}" method="post">
+                        <h2> Editar Producto </h2>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label> Codigo de Producto: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" placeholder="Escribe el codigo" required name="codigo"  value="{{producto.0}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label> Descripcion: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder=" " required name="descripcion" value="{{producto.1}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Nombre del Producto: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder="Nombre del Producto" required name="nombreProducto" value="{{producto.2}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Ingrediente Activo: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder="Ingrediente Activo" required name="ingredienteActivo" value="{{producto.3}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label> Dosis: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" placeholder="Dosis" required name="dosis" value="{{producto.4}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Fecha Caducidad: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="date" required name="fechaCaducidad" value="{{producto.5}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Precio Venta: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" placeholder=" " required name="precioVenta" value="{{producto.6}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Precio Compra: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" placeholder=" " required name="precioCompra" value="{{producto.7}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Existencias: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" placeholder="Ingresa las existencias " required name="existencias" value="{{producto.8}}">
+                                </td>
+                            </tr>
+
+                        </table>
+                        <br>
+                        <center class="botonUser"><input type="submit" value="Guardar"></center>
+                        <br>
+                    </form>
+                </fieldset>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

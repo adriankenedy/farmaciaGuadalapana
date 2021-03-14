@@ -1,0 +1,488 @@
+
+
+  li a:hover {
+    background-color: rgb(21, 213, 219);
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+h3{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+}
+
+.Login{
+    width: 320px;
+    height: 420px;
+    background: black;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(60%,-45%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    float: right;
+}
+
+.Login .Imagen{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: translate(80%,-120%)
+}
+
+
+.Login h1{
+    margin: 0%;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.Login label{
+    margin: 0%;
+    padding: 0%;
+    font-weight: bold;
+    display: block;
+}
+
+.Login input{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.Login input[type = "text"],
+.Login input[type = "password"]{
+
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+}
+
+
+
+.Login input[type = "submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(41,102,158);
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+
+
+.Login a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkslategrey
+}
+
+.Login a:hover{
+    color: aliceblue;
+}
+
+
+.MenuVertical{
+display: block;
+border: 2px double black;
+float: left;
+margin-inline-end: 5%; /*Para los objetos que estan al costado */
+border-radius: 5px 5px 5px 5px;
+width: 200px;
+height: 371px;
+margin-block-end: 20%;
+margin-inline-start: 5px;
+}
+
+.conteiner_Venta{
+    background-color: rgb(50, 179, 78);
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin-inline-end: 80%;
+    margin-inline-start: 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 3.5%;
+}
+
+.conteiner_Venta button{
+    background-color: grey;
+}
+
+.conteiner_Venta li{
+    background-color: rgb(41, 70, 61);
+    color: black;
+    font-weight: bold;
+    padding: 8px 8px;
+}
+
+.conteiner_Venta a{
+    background-color: rgb(249, 253, 252);
+    border-radius: 5px 5px 5px 5px;
+    text-decoration: none;
+}
+
+.conteiner{
+    background-color: rgb(50, 179, 78);
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin-inline-end: 80%;
+    margin-inline-start: 18px;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 3.5%;
+}
+
+.conteiner button{
+    background-color: rgb(73, 71, 71);
+}
+
+.conteiner li{
+    background-color: rgb(245, 250, 248);
+    color: black;
+    font-weight: bold;
+    padding: 8px 8px;
+}
+
+.conteiner a{
+   background-color: rgb(217, 221, 134);
+   border-radius: 5px 5px 5px 5px;
+   text-decoration: none;
+}
+
+
+  img{
+      width: 30px;
+  }
+
+  .LineaV{
+      border-left: 3px solid rgb(255, 255, 255);
+      height: 100px;
+      position: absolute;
+      left: 35%;
+      margin-left: -3px;
+      top: 0%;
+  }
+
+  header{
+      background-color: rgb(36, 38, 41);
+      line-height: 4pc;
+      padding: 5px;
+     border: 2px double black;
+     border-radius: 5px 5px 5px 5px;
+
+  }
+
+footer{
+        background-color: rgb(36, 38, 41);
+        padding: 3%;
+        margin-top: 18%;
+        border: 2px double black;
+        border-radius: 5px 5px 5px 5px;
+
+}
+
+ .button{
+     top: 20%;
+     float: right;
+     transform: translate(350%,-650%);
+     font-size: 15px;
+     border-radius: 12px;
+     background-color: darkslategray;
+     margin: 4px 2px;
+     text-decoration: none;
+     color: white;
+ }
+
+
+ p{
+    transform: translate(5%,-90%);
+    font-size: 20px;
+    color: white;
+ }
+
+h3{
+    color: white;
+}
+
+table{
+    width: 50px;
+    height: 0%;
+}
+
+.buscarEliminar a{
+    margin-inline-start: 50%;
+}
+
+
+/*Tabla Consultar_Ganancias*/
+.datos {
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 500px;
+    margin-top: -10%;
+    
+}
+
+#datos table{
+    margin-top: -10px;
+    margin-inline-start: 80px;
+    width: 500px;
+}
+
+.datos th,tr,td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+/*Tabla Eliminar Venta*/
+.eliminar{
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 700px;
+    margin-top: -30%;
+    padding-inline-start: 10%;
+}
+
+.eliminar table{
+    margin-top: 10px;
+    margin-inline-start: -140px;
+    
+}
+
+.eliminar th, tr, td{
+    border: 2px solid black;
+    
+}
+
+/*Tabla inventario y Corte_Caja*/
+.productos h2{
+    text-align: left;
+    margin-top: -50px;
+    
+    
+}
+
+.productos a{
+    text-align: left;
+    margin-left: -1000px;
+}
+
+
+.productos table{
+    margin-top: 10px;
+    margin-inline-start: -70px;
+}
+
+.tproductos table{
+    margin-left: 10px;
+}
+
+/*Tabla crear_venta*/
+
+.tventas table{
+    margin-top: 20px;
+    margin-inline-start: -70px;
+    margin-left: -5px;
+}
+.tventas h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    size: 100px;
+}
+.tventas a{
+    margin-left:-455px;
+
+}
+.crear_venta input,label{
+    margin-right: 400px;
+    width: 500px;
+    height: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    size: 20px;
+    text-align: left;
+}
+.crear_venta h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    size: 80px;
+    text-align: left;
+}
+#boton {
+    margin-inline-start: 40%;
+    margin-top: 12px;
+}
+
+input {
+    vertical-align: middle;
+    border: 2px double black;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.linkButton {
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgb(194, 33, 33);
+    padding: 10px;
+    width: 15%;
+    color: black;
+    text-decoration: none;
+}
+                            /*Control de todas las ventanas*/
+fieldset{
+    margin-inline-start: 25%;
+    margin-inline-end: 10%;
+    margin-top: -400px;
+    text-align: center;
+}
+
+.referencia{
+    background-color: rgb(36, 38, 41);
+    text-align: center;;
+    vertical-align: 1px;
+    margin-top: 1%;
+    padding: 15px;
+    border-radius: 0;
+}
+
+.principal{
+    padding: 1%;
+    background-color: rgb(36, 38, 41);
+}
+
+.principal .linkButton{
+    margin-inline-start: 700px;
+    text-decoration: none;
+    background-color: rgb(24, 95, 107);
+    
+}
+
+.principal h1{
+    color: rgb(250, 250, 250);
+}
+
+.principalVenta{
+    padding: 1%;
+}
+
+.principalVenta h1{
+    color: white;
+}
+.principalVenta h2{
+    margin-inline-start: 750%;
+    text-decoration: none;
+    margin-top: -45%;
+    color: white;
+}
+
+
+.principalEliminar{
+    padding: 1%;
+}
+
+.principalEliminar h2{
+    margin-inline-start: 750%;
+    text-decoration: none;
+    margin-top: -45%;
+}
+
+.ventaLineaV{
+    border-left: 3px solid rgb(0, 0, 0);
+    height: 100px;
+    position: absolute;
+    left: 35%;
+    margin-left: -3px;
+    top: 0%;
+}
+
+
+.menuPrincipal{
+    background-color: rgb(233, 232, 171);
+}
+
+.menuVenta{
+    background-color: rgb(233, 232, 171);
+}
+
+.menuEliminar{
+    background-color: rgb(233, 232, 171);
+}
+
+.menuInventario{
+    background-color: rgb(233, 232, 171);
+}
+
+.menuCorteCaja{
+    background-color: rgb(233, 232, 171);
+}
+
+.menuGanancias{
+    background-color: rgb(233, 232, 171);
+}
+
+.carrusel{
+    padding-inline-start: 25%;
+    margin-top: -30%;
+    margin-right: 25%;
+    
+}
+
+.carruselInicio{
+    padding-inline-end: 45%;
+    margin-inline-start: 18px;
+    margin-top: 3.5%;
+}
+
+.Iniciar{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    margin-inline-start: 70px;
+    padding: 15px;
+    vertical-align: super;
+}
+
+#barraBusqueda{
+    margin-inline-start: 40%;
+    margin-inline-end: 30%;
+    margin-top: -25%;
+    
+}
+
+#barraBusqueda button{
+    background-color: rgb(129, 19, 19);
+    border: 1px solid black;
+}
+
+#barraBusqueda input{
+    border: 1px solid black;
+}
+
+#barraBusquedaCorte{
+    margin-inline-start: 40%;
+    margin-inline-end: 30%;
+    margin-top: -15%;
+    
+}
+
+a.lista{
+    margin-left: 450px;
+}
+

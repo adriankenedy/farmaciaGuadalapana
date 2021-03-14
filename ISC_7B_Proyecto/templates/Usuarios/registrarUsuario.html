@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, scale = 1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/bootstrap.min.css')}}">
+</head>
+
+<body>
+    <div class="jumbotron text-center" style="background-color: rgb(36, 143, 93)">
+        <style>
+            input {
+                width: 300px;
+                height: 50px;
+                margin-left: 20px;
+            }
+
+            h2 {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                size: 50px;
+                margin-left: 80px;
+                margin-top: 5px;
+            }
+
+            label {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                size: 20px;
+                margin-left: 80px;
+            }
+
+            .botonUser input {
+                background-color: grey;
+                border-radius: 10px 10px 10px 10px;
+                padding: 10px;
+                margin-inline-end: 45%;
+
+            }
+
+            .usuarioFooter {
+                margin-inline-start: 65%;
+                margin-top: -20%;
+            }
+        </style>
+        <h2>
+            Nuevo registro
+        </h2>
+
+    </div>
+
+
+    <main>
+
+        <section>
+            <div>
+                <fieldset>
+                    <form action="/insertarUsuario" method="POST">
+                        <!--h2>
+                            <table>
+                                <tr>
+                                    <td>
+                                        Editar &nbsp;
+                                    </td>
+                                    <td>
+                                        <a href="/editarUsuario"><img
+                                                src="{{url_for('static', filename='../static/IMAGENES/editar.png')}}"
+                                                width="25px"></a>&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        Eliminar &nbsp;
+                                    </td>
+                                    <td>
+                                        <a href="#"><img
+                                                src="{{url_for('static', filename='../static/IMAGENES/eliminar.png')}}"
+                                                width="25px"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </h2-->
+
+                        <table>
+
+                            <tr>
+                                <th>
+                                    <label> Nombre Usuario: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder="Escribe nombre de usuario" required
+                                        name="NombreUsuario">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label> Contraseña: </label>
+                                </th>
+                                <td>
+                                    <input type="password" placeholder=" " required name="Contraseña">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label>Nombre Completo: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder="Escribe Nombre Completo" required name="NombreCompleto">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label>Estatus: </label>
+                                </th>
+                                <td>
+                                    <input type="number" placeholder=" " required name="Estatus">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label>Tipo: </label>
+                                </th>
+                                <td>
+                                    <input type="text" placeholder=" " required name="Tipo">
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+
+                        <center class="botonUser"><input type="submit" value="Guardar"></center>
+                        <br>
+                        <h2><a href="/cerrarSesion" class="linkButton">Cancelar</a></h2>
+
+
+                    </form>
+
+                </fieldset>
+            </div>
+
+        </section>
+    </main>
+</body>
+<footer class="usuarioFooter">
+    <!--li>
+        Presiona el icono de <font color="Red">Editar</font> para editar los datos de algun usuario.
+    </li>
+    <li>
+        Presiona el icono de <font color="Red">Eliminar</font> para eliminar algun usuario.
+    </li-->
+</footer>
+
+</html>

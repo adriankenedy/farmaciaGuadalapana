@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='../static/IMAGENES/logo.ico')}}">
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='../static/CSS/EstilosF.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+
+<header class="principalVenta">
+    <h1>Carrito de Ventas</h1>
+</header>
+
+<body class="menuVenta">
+    <style>
+        #venta th{
+            border: 2px double black;
+
+        }
+
+        #tventa {
+            margin-left: 500px;
+        }
+       
+    </style>
+
+    <fieldset class="inventario">
+        <table id="venta" class="table table-borderedo">
+            <br>
+            <thead>
+                <tr>
+                    <th>Codigo de Producto</th>
+                    <th>Nombre de Producto</th>
+                    <th>Descripcion del Producto</th>
+                    <th>Fecha</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for carrito in carrito %}
+                <tr>
+                    <td>{{carrito.0}}</td>
+                    <td>{{carrito.1}}</td>
+                    <td>{{carrito.2}}</td>
+                    <td>{{carrito.3}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <table>
+            <tr>
+                <th>Total: </th>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <form action="/mandarInicio">
+        <button id="tventa" type="submit" class="btn btn-primary" role="button">Terminar Venta</button>
+    </form>
+</body>
+
+</html>
